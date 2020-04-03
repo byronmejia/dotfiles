@@ -1,23 +1,25 @@
-export ZSH="/Users/byronmejia/.oh-my-zsh"
-
+# Weird Flexes
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
-
-# Aliases - stored in bash_aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-plugins=(git virtualenv zsh-completions kubectl zsh-autosuggestions)
-
+plugins=(git zsh-completions zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Aliases
+alias vim="nvim"
+alias vi="nvim"
+alias vimdiff='nvim -d'
+export EDITOR=nvim
 
+# Python
+export MODIFY_PYFILES_IN_HOOK=1
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/byronmejia/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/byronmejia/google-cloud-sdk/path.zsh.inc'; fi
+# NODE & NPM
+export NODE_OPTIONS=--max_old_space_size=12228
+export DISABLE_OPENCOLLECTIVE=true # The NPM Community
+export ADBLOCK=true # Why...
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/byronmejia/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/byronmejia/google-cloud-sdk/completion.zsh.inc'; fi
+# Setup fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="${XDG_CONFIG_HOME:-$HOME}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
