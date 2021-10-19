@@ -69,6 +69,8 @@ set history=50         " It's more than what most people need
 set autowrite          " Cause I ain't scared 
 set ww+=<,>            " I expect the cursor to move
 set autoread           " Autoread files
+
+
 set clipboard=unnamedplus
 
 " Check fo file changes
