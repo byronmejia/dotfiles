@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 
-let g:python3_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 set mouse=a
 

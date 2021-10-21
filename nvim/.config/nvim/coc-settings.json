@@ -1,3 +1,4 @@
 {
-    "pyright.enable": true
+    "pyright.enable": true,
+    "python.analysis.autoImportCompletions": true
 }
