@@ -10,12 +10,9 @@ set mouse=a
 call plug#begin('~/.vim/plugged')
 
 " Pretty StuffQ
-Plug 'jxnblk/vim-mdx-js'
-Plug 'rakr/vim-one'
+Plug 'unblevable/quick-scope'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
 Plug 'mhinz/vim-signify'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
@@ -25,11 +22,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
-" Spelling
-Plug 'rhysd/vim-grammarous'
-
 " TypeScript
-Plug 'unblevable/quick-scope'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -82,15 +75,6 @@ nnoremap <leader><space> :nohlsearch<CR>
 " Escape without esc
 imap ii <Esc>
 
-" NerdCommenter
-let g:NERDSpaceDelims = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDCompactSexyComs = 1
-let g:NERDTrimTrailingWhitespace = 1
-
-" Toggle nerdtree
-map <C-n> :NERDTreeToggle<CR>
-
 set wildignore+=*/node_modules/**/*
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -100,6 +84,10 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+
+" Open Explorer
+nmap <leader>e <Cmd>CocCommand explorer<CR>
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -270,7 +258,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " Me
-nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>f :Format<CR>
 
 " colorscheme onedark

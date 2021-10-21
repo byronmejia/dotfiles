@@ -1,8 +1,9 @@
 {
   "dependencies": {
     "coc-eslint": ">=1.4.5",
+    "coc-explorer": ">=0.19.0",
     "coc-prettier": ">=1.1.24",
-    "coc-pyright": ">=1.1.172",
+    "coc-pyright": ">=1.1.180",
     "coc-tsserver": ">=1.8.6"
   }
 }
