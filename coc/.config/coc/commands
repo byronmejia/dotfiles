@@ -1,1 +1,4 @@
 explorer
+workspace.workspaceFolders
+pyright.restartserver
+pyright.version
