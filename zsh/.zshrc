@@ -1,7 +1,8 @@
 # Weird Flexes
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+# Temporary remove all plugins
+plugins=(git macos zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
@@ -17,15 +18,10 @@ export MODIFY_PYFILES_IN_HOOK=1
 export NODE_OPTIONS=--max_old_space_size=12228
 export DISABLE_OPENCOLLECTIVE=true # The NPM Community
 export ADBLOCK=true # Why...
+export RUSH_PNPM_STORE_PATH="$HOME/.rush-pnpm"
 
 # Setup fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 export N_PREFIX=~/.npm
 export PATH=$PATH:~/.npm/bin
@@ -34,5 +30,13 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     export OPENBLAS="$(brew --prefix openblas)"
     export GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=1
     export GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1
+    export CFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+    export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
 fi
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/byronmejia/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/byronmejia/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/byronmejia/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/byronmejia/google-cloud-sdk/completion.zsh.inc'; fi
